@@ -41,6 +41,16 @@ Dashboard ini dibuat untuk membantu departemen HR memonitor faktor-faktor krusia
    ```bash
    pip install -r requirements.txt
    ```
-2. Untuk melihat analisis lengkap, buka notebook.ipynb.
+2. Untuk melihat analisis data dan proses modeling:
+   - Buka file `notebook.ipynb` di Jupyter Notebook atau VS Code
 
-3. Untuk menjalankan prediksi, gunakan: prediction.py.
+3. Untuk menjalankan prediksi:
+
+   a. Mode batch (menggunakan file CSV):
+      python prediction.py data.csv
+      - data.csv berisi data karyawan yang ingin diprediksi
+      - Output akan disimpan ke prediction_results.csv
+
+   b. Mode manual (tanpa file):
+      python prediction.py
+      - Menggunakan data contoh yang sudah disediakan di script
