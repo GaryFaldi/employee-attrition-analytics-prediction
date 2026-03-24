@@ -29,7 +29,7 @@ Cakupan proyek ini meliputi:
 
 ---
 
-## Persiapan Proyek
+## Persiapan
 
 ### Sumber Data
 
