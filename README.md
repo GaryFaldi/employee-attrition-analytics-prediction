@@ -1,56 +1,76 @@
-# Proyek Analisis Data & Predictive Modeling: Employee Attrition - Jaya Jaya Maju
+# Proyek Akhir: Menyelesaikan Permasalahan Perusahaan Edutech
 
-## Deskripsi Proyek
-Proyek ini bertujuan untuk menganalisis faktor-faktor penyebab tingginya tingkat pengunduran diri karyawan (*attrition*) di perusahaan "Jaya Jaya Maju" serta membangun model prediksi untuk mengidentifikasi karyawan yang berisiko resign.
+## Business Understanding
 
-## Struktur Folder
-- `model/`: Berisi file model machine learning yang telah dilatih (e.g., `.pkl` atau `.joblib`).
-- `notebook.ipynb`: Proses Exploratory Data Analysis (EDA), Preprocessing, dan pelatihan model.
-- `prediction.py`: Script Python untuk menjalankan prediksi data baru menggunakan model yang telah disimpan.
-- `README.md`: Dokumentasi utama proyek.
-- `garyfaldi-dashboard/`: Folder utama dashboard (berisi aset atau metadata dashboard).
-- `metabase.db.mv.db`: File database instance Metabase yang berisi konfigurasi dashboard visualisasi.
-- `requirements.txt`: Daftar library Python yang dibutuhkan untuk menjalankan proyek.
+Perusahaan menghadapi permasalahan tingginya tingkat attrition (karyawan keluar), yang dapat berdampak pada produktivitas, biaya rekrutmen, serta stabilitas operasional. Oleh karena itu, diperlukan analisis berbasis data untuk memahami faktor-faktor utama yang memengaruhi attrition serta membangun model prediksi guna mengidentifikasi karyawan yang berisiko tinggi untuk keluar.
 
-## Business Dashboard (Metabase)
-Dashboard ini dibuat untuk membantu departemen HR memonitor faktor-faktor krusial penyebab *attrition*.
+---
 
-**Kredensial Akses:**
-- **Email:** `root@mail.com`
-- **Password:** `root123`
+### Permasalahan Bisnis
 
-### Visualisasi Utama:
-1. **Total Attrition Rate:** Menunjukkan angka 16.9% sebagai *baseline* masalah.
-2. **MonthlyIncome vs Attrition:** Menunjukkan kesenjangan gaji yang sangat ekstrem antara karyawan yang bertahan ($6jt) vs yang resign (<$1jt).
-3. **OverTime Impact (100% Stacked):** Membuktikan karyawan lembur memiliki risiko resign 3x lebih tinggi.
-4. **Job Level Insight:** Menunjukkan bahwa karyawan di **Level 1 (Junior)** adalah kelompok paling rentan *attrition*.
-5. **Environment & Tenure:** Analisis hubungan antara rendahnya kepuasan lingkungan kerja dan masa kerja kritis (0-5 tahun).
+Beberapa permasalahan utama yang dihadapi perusahaan antara lain:
 
-## Kesimpulan & Rekomendasi
-### Faktor Utama Attrition:
-1. **MonthlyIncome:** Faktor finansial adalah pembeda paling kontras.
-2. **OverTime:** Beban kerja berlebih memicu *burnout* dan pengunduran diri.
-3. **Job Level:** Kurangnya program retensi untuk level *entry/junior*.
+- Tingginya tingkat attrition karyawan
+- Sulitnya mengidentifikasi faktor utama penyebab karyawan resign
+- Tidak adanya sistem prediksi untuk mendeteksi karyawan berisiko tinggi
+- Kurangnya strategi retensi berbasis data
 
-### Action Items:
-- **Prioritas Tinggi:** Penyesuaian standar gaji minimum dan evaluasi kebijakan jam lembur.
-- **Prioritas Sedang:** Program mentoring khusus untuk Job Level 1 dan perbaikan fasilitas lingkungan kerja (berdasarkan skor kepuasan).
+---
 
-## Cara Menjalankan
-1. Install library yang dibutuhkan:
+### Cakupan Proyek
+
+Cakupan proyek ini meliputi:
+
+- Melakukan eksplorasi data (EDA) untuk memahami pola attrition
+- Membuat visualisasi dalam bentuk business dashboard
+- Mengidentifikasi faktor-faktor utama yang memengaruhi attrition
+- Membangun model machine learning untuk prediksi attrition
+- Membuat sistem prediksi berbasis script (batch & manual)
+
+---
+
+### Persiapan
+
+Sumber data: Dataset Employee Attrition
+
+Setup environment:
    ```bash
    pip install -r requirements.txt
    ```
-2. Untuk melihat analisis data dan proses modeling:
-   - Buka file `notebook.ipynb` di Jupyter Notebook atau VS Code
 
-3. Untuk menjalankan prediksi:
+## Business Dashboard
 
-   a. Mode batch (menggunakan file CSV):
-      python prediction.py data.csv
-      - data.csv berisi data karyawan yang ingin diprediksi
-      - Output akan disimpan ke prediction_results.csv
+Dashboard dibuat untuk memvisualisasikan faktor-faktor utama yang memengaruhi attrition secara interaktif dan informatif.
 
-   b. Mode manual (tanpa file):
-      python prediction.py
-      - Menggunakan data contoh yang sudah disediakan di script
+Beberapa insight utama yang ditampilkan dalam dashboard:
+
+- Distribusi attrition karyawan
+- Pengaruh lembur (OverTime) terhadap attrition
+- Perbandingan rata-rata gaji terhadap attrition
+- Tingkat attrition berdasarkan job level
+- Hubungan kepuasan lingkungan kerja dengan attrition
+- Tren attrition berdasarkan masa kerja (Years at Company)
+
+Dashboard ini membantu stakeholder dalam memahami pola attrition secara cepat dan mendukung pengambilan keputusan berbasis data.
+
+---
+
+## Conclusion
+
+Berdasarkan hasil analisis data dan visualisasi pada dashboard, diperoleh beberapa kesimpulan utama:
+
+- Karyawan yang lembur memiliki tingkat attrition yang lebih tinggi dibandingkan yang tidak lembur
+- Karyawan dengan pendapatan lebih rendah cenderung lebih berisiko untuk keluar
+- Attrition lebih tinggi terjadi pada level jabatan rendah dan menurun pada level yang lebih tinggi
+- Kepuasan lingkungan kerja yang rendah berkorelasi dengan tingkat attrition yang lebih tinggi
+- Attrition paling banyak terjadi pada masa kerja awal dan menurun seiring bertambahnya masa kerja
+
+---
+
+### Rekomendasi Action Items (Optional)
+
+- Mengurangi beban lembur dan mengatur workload secara lebih seimbang
+- Meningkatkan kompensasi terutama pada level karyawan dengan gaji rendah
+- Memfokuskan strategi retensi pada karyawan level awal
+- Meningkatkan kualitas lingkungan kerja untuk meningkatkan kepuasan karyawan
+- Mengoptimalkan program onboarding dan pendampingan pada masa awal kerja
