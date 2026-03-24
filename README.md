@@ -45,10 +45,7 @@ Unduh file `Employee_data.csv` dan letakkan di direktori root proyek sebelum men
 
 #### 1. Clone Repository
 
-```bash
-git clone <url-repository-anda>
-cd <nama-folder-proyek>
-```
+Silahkan Download semua file yang ada di Gdrive: [https://drive.google.com/drive/folders/1LRtRMhq6sHkRJZvTg32Xb3j7BD8D5ONH?usp=drive_link](https://drive.google.com/drive/folders/1LRtRMhq6sHkRJZvTg32Xb3j7BD8D5ONH?usp=drive_link)
 
 #### 2. Membuat Virtual Environment
 
