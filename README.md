@@ -119,7 +119,17 @@ Dashboard ini membantu stakeholder dalam memahami pola attrition secara cepat da
 
 ## Conclusion
 
-Proyek ini berhasil membangun model machine learning untuk memprediksi karyawan yang berpotensi melakukan attrition. Model terbaik yang dipilih adalah **Logistic Regression**, dengan hasil evaluasi pada data uji (212 sampel) sebagai berikut:
+Proyek ini berhasil membangun dan membandingkan tiga model machine learning untuk memprediksi karyawan yang berpotensi melakukan attrition. Berikut perbandingan performa ketiganya:
+
+| Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
+|---|---|---|---|---|---|
+| Logistic Regression | 0.7406 | 0.3733 | **0.7778** | **0.5045** | **0.8038** |
+| Random Forest | 0.8585 | **0.8000** | 0.2222 | 0.3478 | 0.7748 |
+| XGBoost | 0.8255 | 0.4839 | 0.4167 | 0.4478 | 0.7740 |
+
+Meskipun Random Forest memiliki accuracy tertinggi (85.85%), model tersebut sangat buruk dalam mendeteksi kasus Attrition yang sebenarnya (Recall hanya 22%). Dalam konteks bisnis ini, **melewatkan karyawan yang akan resign jauh lebih merugikan** daripada false positive, sehingga Recall dan ROC-AUC menjadi metrik prioritas. Berdasarkan kedua metrik tersebut, **Logistic Regression dipilih sebagai model terbaik** (ROC-AUC: 0.8038, F1-Score: 0.5045).
+
+Berikut detail hasil evaluasi Logistic Regression pada data uji (212 sampel):
 
 | Kelas | Precision | Recall | F1-Score | Support |
 |---|---|---|---|---|
